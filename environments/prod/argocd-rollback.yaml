@@ -1,0 +1,35 @@
+serviceName: argocd-rollback
+replicaCount: 2
+image:
+  repository: docker.io/mithunkumarb2004/argocd-rollback
+  pullPolicy: IfNotPresent
+  tag: "1"
+podAnnotations:
+  prometheus.io/scrape: "true"
+service:
+  type: ClusterIP
+  restPort: 80
+  restTargetPort: 80
+  grpcPort: null
+  grpcTargetPort: null
+resources:
+  limits:
+    cpu: 500m
+    memory: 1Gi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
+env:
+  - name: ENV
+    value: "production"
+  - name: LOG_LEVEL
+    value: "WARNING"
+  - name: PORT
+    value: "80"
+  - name: SERVICE_NAME
+    value: "argocd-rollback"

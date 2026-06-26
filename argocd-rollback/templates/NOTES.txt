@@ -1,0 +1,4 @@
+argocd-rollback has been deployed.
+  Release:    {{ .Release.Name }}
+  App version: {{ .Chart.AppVersion }}
+  Image:      {{ .Values.image.repository }}:{{ .Values.image.tag }}
