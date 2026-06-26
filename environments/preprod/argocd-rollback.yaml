@@ -1,5 +1,5 @@
 serviceName: argocd-rollback
-replicaCount: 1
+replicaCount: 3
 image:
   repository: docker.io/mithunkumarb2004/argocd-rollback
   pullPolicy: IfNotPresent
