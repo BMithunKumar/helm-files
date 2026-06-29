@@ -3,7 +3,7 @@ replicaCount: 3
 image:
   repository: docker.io/mithunkumarb2004/argocd-rollback
   pullPolicy: IfNotPresent
-  tag: "7"
+  tag: "1"
 podAnnotations:
   prometheus.io/scrape: "false"
 service:
