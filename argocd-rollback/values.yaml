@@ -35,5 +35,3 @@ env:
     value: "80"
   - name: SERVICE_NAME
     value: "argocd-rollback"
-
-
